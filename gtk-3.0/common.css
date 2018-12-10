@@ -9,7 +9,8 @@
 @define-color tsingyi_bg #fff;
 @define-color black_bg alpha(#11161D, 0.9);
 @define-color white_fg #fff;
-@define-color black_bg_border #222;
+@define-color black_bg_border #444;
+@define-color black_bg_border_f #2eb398;
 @define-color black_bg_hover #2eb398;
 @define-color white_fg_hover #11161D;
 
@@ -35,76 +36,7 @@
 @define-color bg_highlight_color #fff;
 @define-color text_shadow_color alpha (#fff, 0.4);
 @define-color border_color alpha (#cccccc,0.5);
+@define-color header_border_line1 #2eb398;
+@define-color header_box_shadow #2eb398;
 
 
-/***********
- * Sidebar左侧边栏 *
- ***********/
-.sidebar,
-.sidebar .view,
-.sidebar GtkScrolledWindow {
-	background-color: /*@sidebar_bg*/alpha(#11161D,0.8);
-        font:Bold;
-	color:white;
-    /*font-family:FZXiangLi-S17S,regular;*/
-	box-shadow: 1px 2px 3px #333;
-	border-style:solid;
-	border-width:0 1px 0 0;
-	border-color:alpha (#eeeeee,0.6);
-}
-
-.sidebar .frame {
-	border-style:solid;
-	box-shadow: 1px 2px 3px #333;
-}
-.sidebar row {
-	background-color: #21262D;
-    /*font-family:FZXiangLi-S17S,regular;*/
-	color:white;
-	margin:5px 0px 5px 2px;
-	padding:5px 0px 5px 2px;
-	box-shadow:-1px 2px 3px #170430;
-}
-.sidebar row:hover {
-	/*background-color: shade (@theme_bg_color, 0.95);*/
-	background-color:@tsingyi_side_bg_row;
-	color:@tsingyi_side_fg_row;
-	box-shadow: -1px 4px 5px #2fd8f0;
-	margin:9px 0px 9px 0px;
-}
-
-.sidebar .scrollbar.trough {
-	box-shadow: none;
-	border-radius: 100px;
-	border-style: solid;
-	border-width: 2px;
-	border-color: transparent;
-}
-
-.sidebar .scrollbar.trough {
-	background-color: /*@sidebar_scrollbar_trough*/transparent;
-}
-
-.sidebar .scrollbar.slider {
-	background-color: @sidebar_bg;
-}
-
-.sidebar .scrollbar.slider:hover {
-	background-color: mix (@sidebar_bg, @theme_base_color, 0.35);
-}
-
-.sidebar .scrollbar.slider:hover:active {
-	background-color: @theme_base_color;
-}
-
-.sidebar .radio,
-.sidebar .radio:focus,
-.sidebar .radio:selected {
-	/*background-image: none;*/
-	background-color:yellow;
-}
-.sidebar-icon {
-	color:#2eb398;
-	padding-right:10px;
-	margin-right:10px;
-}

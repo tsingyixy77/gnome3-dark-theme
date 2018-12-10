@@ -127,13 +127,14 @@ spinner {
 
 entry {
   min-height: 22px;
-  border: 1px solid;
+  border-style : solid;
+  border-width: 0px 0px 1px 0px;
   padding: 2px 8px;
   caret-color: currentColor;
   border-radius: 3px;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: @white_fg;
-  border-color: #333;
+  border-color: transparent transparent @black_bg_border transparent;
   background-color: @black_bg; }
   entry.search {
     border-radius: 20px; }
@@ -149,12 +150,14 @@ entry {
     min-height: 0;
     padding: 2px;
     background-image: none;
-    border-color: transparent;
+    border-color:@black_bg_border;
     border-radius: 0; }
   entry:focus {
     background-clip: border-box;
-    color: @white_fg_hover;
-    border-color: #2eb398;
+    color: #000;
+	  border-style : solid;
+	  border-width: 0px 0px 1px 0px;
+    border-color: transparent transparent @black_bg_border_f transparent;
     background-color: alpha(#fff, 0.90); }
   entry:disabled {
     color: rgba(27, 34, 36, 0.55);
@@ -246,7 +249,7 @@ button {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border: 1px solid;
   border-radius: 5%;
-  border-color: alpha(#11161D, 0.66);
+  border-color: @black_bg_border;
   padding: 2px 6px;
   color: @white_fg;
   background-color: alpha(@31363D, 0.90); }
@@ -1560,7 +1563,7 @@ menu,
         margin-right: 2px; }
   menu > arrow,
   .menu > arrow {
-    border-color: transparent;
+    border-color:@black_bg_border;
     background-color: transparent;
     background-image: none;
     min-width: 16px;
@@ -4263,56 +4266,79 @@ filechooser placessidebar.sidebar scrollbar,
   .nautilus-window placessidebar.sidebar scrollbar trough, .nemo-window .sidebar scrollbar trough, .caja-side-pane scrollbar trough {
     background-color: rgba(37, 45, 48, 0.00); }
 
-@define-color theme_fg_color #1b2224;
-@define-color theme_text_color #1b2224;
-@define-color theme_bg_color alpha(#f7f7f7, 0.00);
-@define-color theme_base_color alpha(#ffffff, 0.00);
-@define-color theme_selected_bg_color #2eb398;
-@define-color theme_selected_fg_color #ffffff;
-@define-color fg_color #1b2224;
-@define-color text_color #1b2224;
-@define-color bg_color alpha(#f7f7f7, 0.00);
-@define-color base_color alpha(#ffffff, 0.00);
-@define-color selected_bg_color #2eb398;
-@define-color selected_fg_color #ffffff;
-@define-color insensitive_bg_color alpha(#fcfcfc,0.00);
-@define-color insensitive_fg_color alpha(#1b2224, 0.5);
-@define-color insensitive_base_color #ffffff;
-@define-color theme_unfocused_fg_color #1b2224;
-@define-color theme_unfocused_text_color #1b2224;
-@define-color theme_unfocused_bg_color #f7f7f7;
-@define-color theme_unfocused_base_color #ffffff;
-@define-color borders #444444;
-@define-color unfocused_borders #444444;
-@define-color warning_color #F27835;
-@define-color error_color #FC4138;
-@define-color success_color #2eb398;
-@define-color placeholder_text_color #A8A8A8;
-@define-color link_color #248a76;
-@define-color content_view_bg alpha(#ffffff, 0.00);
-@define-color wm_title alpha(white, 0.8);
-@define-color wm_unfocused_title alpha(white, 0.5);
-@define-color wm_bg #1b2224;
-@define-color wm_bg_unfocused #222a2d;
-@define-color wm_highlight #222a2d;
-@define-color wm_shadow alpha(#000000, 0.35);
-@define-color wm_button_close_bg #f46067;
-@define-color wm_button_close_hover_bg #f68086;
-@define-color wm_button_close_active_bg #f13039;
-@define-color wm_icon_close_bg #F8F8F9;
-@define-color wm_button_hover_bg #fdfdfd;
-@define-color wm_button_active_bg #2eb398;
-@define-color wm_button_hover_border #d1dada;
-@define-color wm_icon_bg #909e9b;
-@define-color wm_icon_unfocused_bg #b6c0be;
-@define-color wm_icon_hover_bg #7a8b88;
-@define-color wm_icon_active_bg #ffffff;
-@define-color header_border_line alpha(#880730,0.28);
-@define-color header_border_line1 #2eb398;
-@define-color header_face alpha(#170430, 0.28);
-@define-color header_box_shadow #2eb398;
 
 .path-bar label {
 	/*font-family:space Age,Regular;*/
 	  font-family:Helvetica,regular;
+}
+/***********
+ * Sidebar左侧边栏 *
+ ***********/
+.sidebar,
+.sidebar .view,
+.sidebar GtkScrolledWindow {
+	background-color:#000;
+	font:Bold;
+	color:@white_fg;
+    /*font-family:FZXiangLi-S17S,regular;*/
+	box-shadow: 1px 2px 3px #333;
+	border-style:solid;
+	border-width:0 1px 0 0;
+	border-color:@black_bg_border;
+}
+
+.sidebar .frame {
+	border-style:solid;
+	box-shadow: 1px 2px 3px @black_bg_border;
+}
+.sidebar row {
+	background-color:#21262D;
+    /*font-family:FZXiangLi-S17S,regular;*/
+	color:white;
+	margin:5px 0px 5px 2px;
+	padding:5px 0px 5px 2px;
+	box-shadow:-1px 2px 3px #333;
+}
+.sidebar row:hover {
+	/*background-color: shade (@theme_bg_color, 0.95);*/
+	background-color:@tsingyi_side_bg_row;
+	color:@tsingyi_side_fg_row;
+	box-shadow: -1px 4px 5px @black_bg_border;
+	margin:9px 0px 9px 0px;
+}
+
+.sidebar .scrollbar.trough {
+	box-shadow: none;
+	border-radius: 100px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: transparent;
+}
+
+.sidebar .scrollbar.trough {
+	background-color: /*@sidebar_scrollbar_trough*/#2eb398;
+}
+
+.sidebar .scrollbar.slider {
+	background-color: @sidebar_bg;
+}
+
+.sidebar .scrollbar.slider:hover {
+	background-color: mix (@sidebar_bg, @black_bg, 0.35);
+}
+
+.sidebar .scrollbar.slider:hover:active {
+	background-color: @black_bg;
+}
+
+.sidebar .radio,
+.sidebar .radio:focus,
+.sidebar .radio:selected {
+	/*background-image: none;*/
+	background-color:yellow;
+}
+.sidebar-icon {
+	color:#2eb398;
+	padding-right:10px;
+	margin-right:10px;
 }
