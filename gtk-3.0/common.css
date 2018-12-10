@@ -7,7 +7,7 @@
 
 @define-color tsingyi_fg #333;
 @define-color tsingyi_bg #fff;
-@define-color black_bg alpha(#11161D, 0.9);
+@define-color black_bg alpha(#11161D, 0.88);
 @define-color white_fg #fff;
 @define-color black_bg_border #444;
 @define-color black_bg_border_f #2eb398;
