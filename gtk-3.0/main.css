@@ -78,7 +78,7 @@ popover.background label.separator {
   color: @white_fg; }
 label selection {
   color: @white_fg_hover;
-  background-color: #black_bg_hover; }
+  background-color: @black_bg_hover; }
 label:disabled {
   color: rgba(127, 134, 136, 0.55); }
 
@@ -267,7 +267,7 @@ button {
         transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   button:hover {
     color: @white_fg_hover;
-    box-shadow : inset 1px #eee;
+    box-shadow : inset 1px 2px 2px #eeeeee;
     border-color: alpha(#2eb398, 0.66);
     background-color: @black_bg_hover;
     -gtk-icon-effect: highlight; }
@@ -1080,14 +1080,14 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
     color: #ffffff;
     border-color: #2eb398;
     border-top-width: 10px;
-    box-shadow: inset 1px 2p 3px #eee;
+    box-shadow: inset 1px 2px 3px #eee;
     background-color: #2c383b; }
   .primary-toolbar button:active, headerbar button:active, .primary-toolbar button:checked, headerbar button:checked {
     transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     color: #ffffff;
     border-color: #2eb398;
     border-top-width: 10px;
-    box-shadow: inset 1px 2p 3px #eee;
+    box-shadow: inset 1px 2px 3px #eee;
     background-color: #2eb398;
     background-clip: border-box; }
   .primary-toolbar button:disabled, headerbar button:disabled {
@@ -1792,8 +1792,7 @@ notebook {
 
 scrollbar {
   background-color:#11161D;
-  /*transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94); */
-   * }
+    }
   * {
     -GtkScrollbar-has-backward-stepper: false;
 	        -GtkRange-trough-border: 0;
@@ -2603,8 +2602,8 @@ placessidebar row {
 }
   placessidebar row label.sidebar-label:dir(rtl) {
 	  font-family:Helvetica,regular;
-	  font-size:bold;
-    padding-left: 2px; }
+	  font-weight:bold;
+    padding-left:2px; }
   button.sidebar-button {
     min-width: 22px;
     min-height: 22px;
@@ -2728,7 +2727,7 @@ tooltip {
   border-radius: 2px;
   box-shadow: none; }
   tooltip.background {
-    background-color: rgba(#fff, 0.90);
+    background-color: alpha(#ffffff, 0.90);
     background-clip: padding-box; }
     tooltip.background label {
       padding: 4px; }
@@ -4284,7 +4283,7 @@ filechooser placessidebar.sidebar scrollbar,
 .sidebar .view,
 .sidebar GtkScrolledWindow {
 	background-color:#000;
-	font:Bold;
+	font-weight:bold;
 	color:@white_fg;
     /*font-family:FZXiangLi-S17S,regular;*/
 	box-shadow: 1px 2px 3px #333;
